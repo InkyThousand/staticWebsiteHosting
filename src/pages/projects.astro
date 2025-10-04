@@ -1,0 +1,49 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const projects = [
+  {
+    title: "Static Website Hosting",
+    description: "S3 + CloudFront static website deployment",
+    tech: ["S3", "CloudFront", "Route 53"],
+    github: "https://github.com/yourusername/static-hosting",
+    status: "In Progress"
+  },
+  {
+    title: "Serverless API",
+    description: "Lambda-based REST API with DynamoDB",
+    tech: ["Lambda", "API Gateway", "DynamoDB"],
+    github: "https://github.com/yourusername/serverless-api",
+    status: "Planned"
+  }
+];
+---
+
+<Layout title="Projects - AWS Portfolio">
+  <section>
+    <h1 class="text-3xl font-bold mb-8">My AWS Projects</h1>
+    <div class="grid gap-6">
+      {projects.map(project => (
+        <div class="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow">
+          <div class="flex justify-between items-start mb-3">
+            <h2 class="text-xl font-semibold">{project.title}</h2>
+            <span class={`px-2 py-1 text-sm rounded ${
+              project.status === 'In Progress' ? 'bg-yellow-100 text-yellow-800' : 'bg-gray-100 text-gray-600'
+            }`}>
+              {project.status}
+            </span>
+          </div>
+          <p class="text-gray-600 mb-4">{project.description}</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            {project.tech.map(tech => (
+              <span class="bg-blue-100 text-blue-800 px-2 py-1 text-sm rounded">{tech}</span>
+            ))}
+          </div>
+          <a href={project.github} class="text-blue-600 hover:underline">
+            View on GitHub →
+          </a>
+        </div>
+      ))}
+    </div>
+  </section>
+</Layout>
