@@ -45,18 +45,3 @@ python app/main.py
 │   └── static/           # Backend static files
 └── docs/                 # Documentation
 ```
-
-## Deployment Options
-
-1. **Static (Current)**: S3 + CloudFront
-2. **Dynamic (Future)**: ECS/Lambda + API Gateway
-3. **Hybrid**: Static frontend + Serverless backend
-
-## AWS Services Integration
-
-- S3: Static hosting & file storage
-- CloudFront: CDN
-- Route 53: DNS
-- Lambda: Serverless functions
-- DynamoDB: Project data storage
-- API Gateway: REST API endpoints
