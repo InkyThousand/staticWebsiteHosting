@@ -1,0 +1,5 @@
+# Copy this file to terraform.tfvars and update with your values
+domain_name         = "your-domain.com"
+aws_region         = "us-east-1"
+environment        = "production"
+create_hosted_zone = false
